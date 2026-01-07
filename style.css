@@ -10,8 +10,9 @@
     width: 100%;
     height: auto;
     .container {
-        width: 600px;
-        padding: 30px 100px;
+        width: 95%;
+        max-width: 600px;
+        padding: 30px 80px;
         margin: 15% auto;
         background-color: white;
         box-shadow: 0 3px 8px rgba(142, 141, 127, 0.559);
@@ -21,7 +22,7 @@
         justify-content: center;
         gap: 80px;
         .title {
-            font-size: 45px;
+            font-size: 38px;
             font-weight: 600;
             background-color: white;
         }
