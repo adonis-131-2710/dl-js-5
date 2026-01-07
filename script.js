@@ -7,33 +7,29 @@ const progress = slider.querySelector(".progress");
 const minTooltip = slider.querySelector(".min-tooltip");
 const maxTooltip = slider.querySelector(".max-tooltip");
 
-const gap = 200; // Khoảng cách tối thiểu giữa 2 đầu giá
+const gap = 200; 
 
 function updateUI() {
     const minVal = parseInt(minInput.value);
     const maxVal = parseInt(maxInput.value);
     const totalMax = minInput.max;
 
-    // 1. Cập nhật vị trí thanh progress
     const leftPercent = (minVal / totalMax) * 100;
     const rightPercent = 100 - (maxVal / totalMax) * 100;
 
     progress.style.left = leftPercent + "%";
     progress.style.right = rightPercent + "%";
 
-    // 2. Cập nhật vị trí và nội dung Tooltips
     minTooltip.style.left = leftPercent + "%";
     minTooltip.innerText = `$${minVal}`;
 
     maxTooltip.style.left = (100 - rightPercent) + "%";
     maxTooltip.innerText = `$${maxVal}`;
 
-    // 3. Cập nhật vào ô nhập số
     minPrice.value = minVal;
     maxPrice.value = maxVal;
 }
 
-// Xử lý kéo thanh trượt Min
 minInput.addEventListener("input", () => {
     let minVal = parseInt(minInput.value);
     let maxVal = parseInt(maxInput.value);
@@ -44,7 +40,6 @@ minInput.addEventListener("input", () => {
     updateUI();
 });
 
-// Xử lý kéo thanh trượt Max
 maxInput.addEventListener("input", () => {
     let minVal = parseInt(minInput.value);
     let maxVal = parseInt(maxInput.value);
@@ -55,7 +50,6 @@ maxInput.addEventListener("input", () => {
     updateUI();
 });
 
-// Xử lý khi nhập số trực tiếp vào ô
 minPrice.addEventListener("change", () => {
     let minVal = parseInt(minPrice.value);
     let maxVal = parseInt(maxInput.value);
@@ -78,5 +72,4 @@ maxPrice.addEventListener("change", () => {
     updateUI();
 });
 
-// Chạy lần đầu để khởi tạo vị trí
 updateUI();
