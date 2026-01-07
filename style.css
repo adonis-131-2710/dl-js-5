@@ -1,0 +1,151 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Urbanist";
+    background-color: rgb(210, 255, 228);
+}
+
+.slide {
+    width: 100%;
+    height: auto;
+    .container {
+        width: 600px;
+        padding: 30px 100px;
+        margin: 15% auto;
+        background-color: white;
+        box-shadow: 0 3px 8px rgba(142, 141, 127, 0.559);
+        border-radius: 20px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 80px;
+        .title {
+            font-size: 45px;
+            font-weight: 600;
+            background-color: white;
+        }
+        .range-line {
+            width: 100%;
+            background-color: rgb(255, 255, 255);
+            position: relative;
+            pointer-events: none;
+            .min-input {
+                width: 100%;
+                position: absolute;
+                appearance: none;
+                background: transparent;
+                z-index: 1;
+            }
+            .max-input {
+                width: 100%;
+                position: absolute;
+                appearance: none;
+                background: transparent;
+                z-index: 1;
+            }
+            .line {
+                width: 100%;
+                position: absolute;
+                height: 10px;
+                background-color: rgba(114, 86, 103, 0.371);
+                transform: translateY(100%);
+                overflow: hidden;
+                .progress {
+                    position: absolute;
+                    height: 100%;
+                    background: rgba(213, 36, 92, 0.908);
+                }
+            }
+        }
+        .max-input::-webkit-slider-thumb {
+            pointer-events: auto;
+            appearance: none;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            background-color: white;
+            box-shadow: 0 1px 5px rgba(172, 193, 252, 0.786);
+        }
+        .min-input::-webkit-slider-thumb {
+            pointer-events: auto;
+            appearance: none;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            background-color: white;
+            box-shadow: 0 1px 5px rgba(172, 193, 252, 0.786);
+        }
+        .range-price {
+            display: flex;
+            justify-content: space-between;
+            background-color: white;
+            .box-pr {
+                width: 100px;
+                height: 50px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                gap: 5px;
+                font-size: 18px;
+                font-weight: 500;
+                padding: 10px;
+                border-radius: 5px;
+                background-color: white;
+                border: 1px solid rgb(79, 190, 227);
+                .cost {
+                    background-color: white;
+                    
+                }
+                .min-price {
+                    width: 60px;
+                    height: 50px;
+                    padding: 0 5px;
+                    border-top: 1px solid rgb(79, 190, 227);
+                    border-bottom: 1px solid rgb(79, 190, 227);
+                    border-left: 1px solid rgb(79, 190, 227);
+                    background-color: white;
+                }
+                .max-price {
+                    width: 60px;
+                    height: 50px;
+                    padding: 0 5px;
+                    border-top: 1px solid rgb(79, 190, 227);
+                    border-bottom: 1px solid rgb(79, 190, 227);
+                    border-left: 1px solid rgb(79, 190, 227);
+                    background-color: white;
+                }
+            }
+        }
+    }
+}
+
+input {
+    border: none;
+    outline: none;
+}
+
+
+.tooltip {
+    position: absolute;
+    top: -45px; 
+    background-color: #d5245c;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 14px;
+    transform: translateX(-50%);
+    pointer-events: none;
+    white-space: nowrap;
+}
+
+.tooltip::after {
+    content: "";
+    position: absolute;
+    bottom: -5px;
+    left: 50%;
+    transform: translateX(-50%);
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-top: 5px solid #d5245c;
+}
